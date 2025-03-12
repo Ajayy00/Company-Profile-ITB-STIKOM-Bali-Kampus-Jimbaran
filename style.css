@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: montserrat;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+}
+
+.navbar{
+    background-color: #1d61a1;
+}
+
+
+.img-container{
+    margin-left: 50px;
+}
+
+.navbar-brand img{
+    height: 50px;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-clip{
+    position: absolute;
+    right: 0;
+    bottom: -1;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio:16/9){
+    .background-clip{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9){
+    .background-clip{
+        width: auto;
+        height: 100%;
+    }
+}
+
+.content {
+    padding: 50px;
+    background-color: #1d61a1;
+    text-align: center;
+}
+
+.aboutUs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.card-container{
+    margin: 50px;
+    display: flex; /* Mengaktifkan flexbox */
+    flex-direction: row; /* Pastikan elemen sejajar secara horizontal */
+    gap: 50px;
+    justify-content: space-around;
+}
+
+.card{
+    padding: 10px;
+    border: 10px solid #ccc;
+    border-radius: 50px;
+    
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-list{
+    display: flex; /* Mengaktifkan flexbox */
+    
+    gap: 30px;
+
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup-content {
+    background: white;
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+.popup video {
+    width: 100%;
+    border-radius: 10px;
+}
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    background: rgba(128, 128, 128, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.popup .close:hover {
+    background: rgba(128, 128, 128, 0.8);
+}
+
+.footer{
+
+}
+
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+}
