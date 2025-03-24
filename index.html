@@ -29,7 +29,7 @@
                 <a class="nav-link" href="#">Tentang Kami</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Program</a>
+                <a class="nav-link" href="#">Program Studi</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -66,14 +66,14 @@
         <h1>About Us</h1>
         <div class="card-container">
             <div class="card" style="width: 18rem;">
-                <div class="card-omg-container">
+                <div class="card-img-container">
                     <img src="aset/DIO02446.JPG" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body">
                 <h5 class="card-title">Kampus Jimbaran</h5>
                 <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores nemo inventore ad, dolorem dignissimos laboriosam eum. Quod molestiae nobis quae.</p>
                 </div>
-                <button class="btn btn-primary" onclick="openPopup('KampusJimbaran.mp4')">Tonton Video</button>
+                <button class="btn" onclick="openPopup('KampusJimbaran.mp4')">Tonton Video</button>
             </div>
     
             <div class="card" style="width: 18rem;">
@@ -84,7 +84,7 @@
                 <h5 class="card-title">Fasilitas</h5>
                 <p class="card-text">Fasilitas di kampus</p>
                 </div>
-                <button class="btn btn-primary" onclick="openPopup('FasilitasJimbaran.mp4')">Tonton Video</button>
+                <button class="btn" onclick="openPopup('FasilitasJimbaran.mp4')">Tonton Video</button>
             </div>
     
             <div class="card" style="width: 18rem;">
@@ -95,31 +95,31 @@
                     <h5 class="card-title">Organisasi dan Komunitas</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>    
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn">Go somewhere</a>
                 
             </div>
         </div>
     </div>
 
-    <div class="container swiper">
+    <div class="card-container swiper">
         <div class="slider-wrapper">
             <div class="card-list swiper-wrapper">
                 <div class="card swiper-slide" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Prodi Sistem Informasi</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
+                    <button class="btn" onclick="openPopup('SistemInformasi.mp4')">Tonton Video</button>
                 </div>
     
                 <div class="card swiper-slide" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Prodi Sistem Komputer</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
+                    <button class="btn" onclick="openPopup('SistemKomputer.mp4')">Tonton Video</button>
                 </div>
     
                 <div class="card swiper-slide" style="width: 18rem;">
@@ -152,8 +152,8 @@
             </div>
 
             <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+            <div class="swiper-slide-button swiper-button-prev"></div>
         </div>
     </div>
 
@@ -172,8 +172,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        
+    <script src="script.js"></script>    
+
 </body>
 </html>

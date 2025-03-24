@@ -71,14 +71,12 @@ body, html {
     display: flex; /* Mengaktifkan flexbox */
     flex-direction: row; /* Pastikan elemen sejajar secara horizontal */
     gap: 50px;
-    justify-content: space-around;
 }
 
 .card{
     padding: 10px;
     border: 10px solid #ccc;
-    border-radius: 50px;
-    
+    border-radius: 50px;    
 }
 
 .card img {
@@ -87,11 +85,36 @@ body, html {
     object-fit: cover;
 }
 
-.card-list{
-    display: flex; /* Mengaktifkan flexbox */
-    
-    gap: 30px;
+.card .btn{
+    background-color: #1d61a1;
+    color: white;
+    outline: none;
+    transition: 0.2s ease;
+}
 
+.card .btn:hover{
+    background-color: #f6c916;
+}
+
+.slider-wrapper{
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 70px 55px;    
+
+}
+
+.swiper-pagination{
+    margin-top: 50px;
+}
+
+.swiper-slide-button {
+    transition: 0.2s ease;
+    color: #1d61a1;
+
+}
+
+.swiper-slide-button:hover{
+    color: #f6c916;
 }
 
 .overlay {
