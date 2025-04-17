@@ -1,3 +1,37 @@
+let prevScrollpos = window.pageYOffset;
+    const navbar = document.getElementById("navbar");
+    let scrollUpDistance = 0;
+    const showAfter = 100; // pixel scroll ke atas sebelum navbar muncul
+
+    window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+
+        if (currentScrollPos < prevScrollpos) {
+        // Scroll ke atas
+        scrollUpDistance += prevScrollpos - currentScrollPos;
+
+        if (scrollUpDistance > showAfter) {
+            navbar.style.top = "0"; // tampilkan navbar
+        }
+        } else {
+        // Scroll ke bawah
+        scrollUpDistance = 0;
+        navbar.style.top = "-80px"; // sembunyikan navbar
+    }
+
+    prevScrollpos = currentScrollPos;
+};
+
+window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+});
+
 function openPopup(videoSrc) {
     const popup = document.getElementById("videoPopup");
     const video = document.getElementById("popupVideo");
@@ -31,6 +65,26 @@ document.addEventListener("keydown", function(event) {
         video.currentTime -= 5;
     }
 });
+
+
+const carouselItems = document.querySelectorAll('.carousel-item');
+
+  carouselItems.forEach(item => {
+    const overlay = item.querySelector('.carousel-overlay');
+    let timeout;
+
+    item.addEventListener('mouseenter', () => {
+      clearTimeout(timeout); // biar gak bentrok
+      overlay.classList.add('show');
+    });
+
+    item.addEventListener('mouseleave', () => {
+      timeout = setTimeout(() => {
+        overlay.classList.remove('show');
+      }, 1500); // waktu delay
+    });
+  });
+  
 
 const swiper = new Swiper('.slider-wrapper', {
     loop: true,
