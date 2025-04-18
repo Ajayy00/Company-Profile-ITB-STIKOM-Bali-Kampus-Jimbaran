@@ -76,22 +76,25 @@ document.addEventListener("keydown", function(event) {
 
 
 const carouselItems = document.querySelectorAll('.carousel-item');
+const isMobile = window.innerWidth <= 768;
 
-  carouselItems.forEach(item => {
-    const overlay = item.querySelector('.carousel-overlay');
-    let timeout;
-
-    item.addEventListener('mouseenter', () => {
-      clearTimeout(timeout); // biar gak bentrok
-      overlay.classList.add('show');
+if (!isMobile) {
+    carouselItems.forEach(item => {
+      const overlay = item.querySelector('.carousel-overlay');
+      let timeout;
+  
+      item.addEventListener('mouseenter', () => {
+        clearTimeout(timeout); // biar gak bentrok
+        overlay.classList.add('show');
+      });
+  
+      item.addEventListener('mouseleave', () => {
+        timeout = setTimeout(() => {
+          overlay.classList.remove('show');
+        }, 1500); // waktu delay
+      });
     });
-
-    item.addEventListener('mouseleave', () => {
-      timeout = setTimeout(() => {
-        overlay.classList.remove('show');
-      }, 1500); // waktu delay
-    });
-  });
+  }
   
 
 const swiper = new Swiper('.slider-wrapper', {

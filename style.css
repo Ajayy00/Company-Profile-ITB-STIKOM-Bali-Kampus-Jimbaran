@@ -120,7 +120,8 @@ html {
 .card{
     padding: 10px;
     border: 10px solid #ccc;
-    border-radius: 50px;    
+    border-radius: 50px;   
+    height: auto !important; 
 }
 
 .card img {
@@ -152,7 +153,7 @@ html {
 }
 
 .orKom{
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .orKom h1{
@@ -169,6 +170,7 @@ html {
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 60;
     background: rgba(0, 0, 0, 0.7); /* Warna hitam semi-transparan */
     display: flex;
     align-items: center;
@@ -180,6 +182,19 @@ html {
     pointer-events: none; /* supaya overlay gak ganggu hover */
 }
 
+@media (max-width: 768px) {
+    .carousel-overlay {
+        opacity: 1 !important; /* paksa muncul */
+        pointer-events: auto;  /* aktifkan klik jika perlu */
+    }
+
+    .overlay-image{
+        transform: translateY(-10px);
+    }
+
+
+}
+
 .carousel-overlay.show {
     opacity: 1;
 }
@@ -188,58 +203,6 @@ html {
     opacity: 1; /* Muncul saat hover */
 }
 
-.carousel-title {
-    position: relative;
-    display: inline-block;
-    font-size: 3rem; /* ukuran besar */
-    font-weight: bold;
-    margin-left: 150px;
-    margin-top: 30px;
-    color: #fff
-}
-
-.carousel-title .underline {
-    position: absolute;
-    bottom: -10px; /* jarak dari teks */
-    left: 0;
-    width: 60%; /* panjang garis */
-    height: 5px; /* ketebalan garis */
-    background-color: #f6c916;
-    border-radius: 2px;
-}
-
-.carousel-caption {
-    margin-top: 2rem; /* ini penting untuk kasih jarak dari underline */
-    font-size: 1.2rem;
-    color: #fff;
-    transition: opacity 0.5s ease;
-}
-
-.carousel-logo img{
-    size: 50%;
-}
-
-@media (max-width: 768px) {
-    .carousel-title {
-      font-size: 2rem;
-      margin-left: 75px;
-    }
-  
-    .carousel-caption p {
-      font-size: 1rem;
-    }
-}
-  
-@media (max-width: 480px) {
-    .carousel-title {
-      font-size: 1.5rem;
-      margin-left: 30px;
-    }
-  
-    .carousel-caption p {
-      font-size: 0.9rem;
-    }
-}
 
 @media (max-width: 480px) {
     /* Slide pertama */
@@ -327,7 +290,7 @@ html {
 .card-text{
     min-height: 50px;
     max-height: 150px;
-    overflow: hidden;
+    overflow: scroll;
     text-overflow: ellipsis;
 }
 
@@ -565,6 +528,26 @@ body, html {
     background-color: #f6c916;
 }
 
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.25rem; /* tablet dan HP besar */
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-title {
+        font-size: 1.1rem; /* HP kecil */
+    }
+
+    .card-text {
+        font-size: 0.875rem;
+    }
+}
+
 .orKom{
     display: block;
     align-items: center;
@@ -743,7 +726,7 @@ body, html {
 .card-text{
     min-height: 50px;
     max-height: 150px;
-    overflow: hidden;
+    overflow: scroll;
     text-overflow: ellipsis;
 }
 
@@ -940,6 +923,14 @@ p {
 @media screen and (max-width: 991px) {
     .navbar-nav {
         text-align: center;
+    }
+
+    .aboutUs .card{
+        margin: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        height: auto;
+
     }
 
     .card-container {
