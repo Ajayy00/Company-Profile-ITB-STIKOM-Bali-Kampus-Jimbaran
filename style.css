@@ -39,20 +39,20 @@ html {
     height: 50px;
 }
 
-.container{
+.video-wrapper {
+    position: relative;
     width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-top: 56.25%;
+    overflow: hidden;
 }
 
-.background-clip{
+.background-clip {
     position: absolute;
-    right: 0;
-    bottom: -1;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Biar video tetap proporsional & terisi penuh */
 }
 
 @media (min-aspect-ratio:16/9){
@@ -241,6 +241,37 @@ html {
     }
 }
 
+@media (max-width: 480px) {
+    /* Slide pertama */
+    .carousel-inner .carousel-item:nth-child(1) .overlay-image {
+        content: url('aset/himasPort.png'); /* Gambar overlay untuk slide pertama pada layar kecil */
+    }
+    /* Slide kedua */
+    .carousel-inner .carousel-item:nth-child(2) .overlay-image {
+        content: url('aset/edenPort.png'); /* Gambar overlay untuk slide kedua pada layar kecil */
+    }
+    /* Slide ketiga */
+    .carousel-inner .carousel-item:nth-child(3) .overlay-image {
+        content: url('aset/stigdevPort.png'); /* Gambar overlay untuk slide ketiga pada layar kecil */
+    }
+    /* Slide keempat */
+    .carousel-inner .carousel-item:nth-child(4) .overlay-image {
+        content: url('aset/unifistPort.png'); /* Gambar overlay untuk slide keempat pada layar kecil */
+    }
+    /* Slide kelima */
+    .carousel-inner .carousel-item:nth-child(5) .overlay-image {
+        content: url('aset/futsalPort.png'); /* Gambar overlay untuk slide kelima pada layar kecil */
+    }
+    /* Slide keenam */
+    .carousel-inner .carousel-item:nth-child(6) .overlay-image {
+        content: url('aset/bultangPort.png'); /* Gambar overlay untuk slide keenam pada layar kecil */
+    }
+    /* Slide ketujuh */
+    .carousel-inner .carousel-item:nth-child(7) .overlay-image {
+        content: url('aset/mahatraderPort.png'); /* Gambar overlay untuk slide ketujuh pada layar kecil */
+    }
+}
+
 #carouselExampleIndicators {
     max-width: 100%;
     margin: auto;
@@ -248,13 +279,6 @@ html {
   
 .carousel-inner {
     height: 500px;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
-    object-position: center;
 }
 
 .sistem-kom-img{
@@ -561,6 +585,23 @@ body, html {
     
 }
 
+#carouselExampleIndicators {
+    max-width: 100%;
+    margin: auto;
+}
+  
+.carousel-inner {
+    align-items: center;
+    height: 500px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    object-position: center;
+}
+
 .carousel-item .carousel-overlay {
     position: absolute;
     top: 0;
@@ -655,21 +696,6 @@ body, html {
     }
 }
 
-#carouselExampleIndicators {
-    max-width: 100%;
-    margin: auto;
-}
-  
-.carousel-inner {
-    height: 500px;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
-    object-position: center;
-}
 
 .sistem-kom-img{
     object-position: top;
@@ -843,7 +869,28 @@ body, html {
 .footer-contact{
     color: #ccc;
 }
-  
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-contact i {
+    color: #f6c916;
+    font-size: 1.1rem;
+}
+
+.footer-contact a {
+    color: #ccc; /* Atur warna sesuai keinginanmu */
+    text-decoration: none; /* Hilangkan garis bawah */
+    transition: color 0.3s;
+}
+
+.footer-contact a:hover {
+    color: #fff; /* Warna saat di-hover */
+}
+
 .footer-links ul {
     list-style: none;
     padding: 0;
@@ -947,6 +994,24 @@ p {
 
     .footer-logo img {
         margin: 0 auto 10px;
+        margin-bottom: 10px;
+    }
+
+    .footer-contact {
+        text-align: center;
+    }
+
+    .footer-contact p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .footer-contact i,
+    .footer-contact img {
+        margin-bottom: 5px;
     }
 
     .footer-logo, 
