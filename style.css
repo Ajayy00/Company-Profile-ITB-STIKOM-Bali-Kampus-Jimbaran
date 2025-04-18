@@ -289,8 +289,8 @@ html {
 
 .card-text{
     min-height: 50px;
-    max-height: 150px;
-    overflow: scroll;
+    max-height: 500px;
+    overflow: hidden;
     text-overflow: ellipsis;
 }
 
@@ -720,14 +720,6 @@ body, html {
 /* Agar tombol selalu di bawah */
 .card button.btn {
     margin-top: auto;
-}
-
-
-.card-text{
-    min-height: 50px;
-    max-height: 150px;
-    overflow: scroll;
-    text-overflow: ellipsis;
 }
 
 .swiper-pagination{
