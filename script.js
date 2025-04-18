@@ -6,13 +6,21 @@ let prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
         let currentScrollPos = window.pageYOffset;
 
-        if (currentScrollPos < prevScrollpos) {
-        // Scroll ke atas
-        scrollUpDistance += prevScrollpos - currentScrollPos;
-
-        if (scrollUpDistance > showAfter) {
-            navbar.style.top = "0"; // tampilkan navbar
+        // Kalau user sudah dekat bagian atas halaman, tampilkan navbar langsung
+        if (currentScrollPos <= 50) {
+            navbar.style.top = "0";
+            scrollUpDistance = 0;
+            prevScrollpos = currentScrollPos;
+            return;
         }
+
+        if (currentScrollPos < prevScrollpos) {
+            // Scroll ke atas
+            scrollUpDistance += prevScrollpos - currentScrollPos;
+
+            if (scrollUpDistance > showAfter) {
+                navbar.style.top = "0"; // tampilkan navbar
+            }
         } else {
         // Scroll ke bawah
         scrollUpDistance = 0;
