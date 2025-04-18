@@ -71,9 +71,13 @@ html {
 }
 
 .content {
-    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
     background-color: #1d61a1;
     text-align: center;
+    height: 30vh;
 }
 
 .content .greet{
@@ -201,7 +205,7 @@ html {
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     /* Slide pertama */
     .carousel-inner .carousel-item:nth-child(1) .overlay-image {
         content: url('aset/webp/himasPort.webp'); /* Gambar overlay untuk slide pertama pada layar kecil */
