@@ -24,7 +24,7 @@ let prevScrollpos = window.pageYOffset;
         } else {
         // Scroll ke bawah
         scrollUpDistance = 0;
-        navbar.style.top = "-80px"; // sembunyikan navbar
+        navbar.style.top = "-100px"; // sembunyikan navbar
     }
 
     prevScrollpos = currentScrollPos;
@@ -96,27 +96,26 @@ if (!isMobile) {
     });
   }
   
-
 const swiper = new Swiper('.slider-wrapper', {
-    loop: true,
-    grabCursor: true,
-    spaceBetween: 30,
-
+      loop: true,
+      grabCursor: true,
+      spaceBetween: 30,
   
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true
-    },
+    
+      // If we need pagination
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          dynamicBullets: true
+      },
+    
+      // Navigation arrows
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
   
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    breakpoints: {
+      breakpoints: {
         0: {
             slidesPerView: 1
         },
@@ -125,6 +124,14 @@ const swiper = new Swiper('.slider-wrapper', {
         },
         1024: {
             slidesPerView: 3
+        },
+        1440: {
+            slidesPerView: 3,
+            centeredSlides: true
+        },
+        1920: {
+            slidesPerView: 3,
+            centeredSlides: true
         }
     }
 });
