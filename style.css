@@ -1,0 +1,691 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: montserrat;
+}
+
+body, html {
+    font-family: montserrat;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: top 0.3s ease;
+    z-index: 1000;
+}
+
+
+.navbar{
+    background-color: #1d61a1;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 10px 12px 2px rgba(0, 0, 0, 0.4);
+}
+
+.img-container{
+    margin-left: 50px;
+}
+
+.navbar-brand img{
+    height: 50px;
+}
+
+.video-wrapper {
+    top: 40px;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+
+.background-clip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Biar video tetap proporsional & terisi penuh */
+}
+
+@media (min-aspect-ratio:16/9){
+    .background-clip{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9){
+    .background-clip{
+        width: auto;
+        height: 100%;
+    }
+}
+
+.content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 20px;
+    padding: 30px;
+    background-color: #1d61a1;
+    text-align: center;
+}
+
+.content .greet{
+    color: white;
+}
+
+.aboutUs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.aboutUs h1{
+    margin-bottom: 0;
+    text-decoration: underline;
+    text-decoration-thickness: 5px; /* Mengatur ketebalan underline */
+    text-decoration-color: #f6c916; /* Mengatur warna underline */
+    text-underline-offset: 10px; /* Mengatur jarak antara teks dan underline */
+}
+
+.aboutUs .card {
+    width: 100%;
+    max-width: 600px;
+    height: 520px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.aboutUs .card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-container{
+    margin: 40px 20px 60px 20px;
+    display: flex; /* Mengaktifkan flexbox */
+    flex-direction: row; /* Pastikan elemen sejajar secara horizontal */
+    gap: 50px;
+}
+
+.card{
+    padding: 10px;
+    border: 10px solid #ccc;
+    border-radius: 50px;   
+    height: auto !important; 
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.card .btn{
+    background-color: #1d61a1;
+    color: white;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.card .btn:hover{
+    background-color: #f6c916;
+}
+
+.orKom{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    min-height: 100vh;
+}
+
+.orKom h1{
+    text-align: center;
+    margin-bottom: 40px;
+    text-decoration: underline;
+    text-decoration-thickness: 5px; /* Mengatur ketebalan underline */
+    text-decoration-color: #f6c916; /* Mengatur warna underline */
+    text-underline-offset: 10px; /* Mengatur jarak antara teks dan underline */
+    
+}
+
+.carousel-item{
+    display: flex !important;
+    height:80vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item .carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    background: rgba(0, 0, 0, 0.7); /* Warna hitam semi-transparan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    opacity: 0; /* Sembunyiin dulu */
+    transition: opacity 0.5s ease;
+    pointer-events: none; /* supaya overlay gak ganggu hover */
+}
+
+@media (max-width: 768px) {
+    .carousel-overlay {
+        opacity: 1 !important; /* paksa muncul */
+        pointer-events: auto;  /* aktifkan klik jika perlu */
+    }
+
+}
+
+.carousel-overlay.show {
+    opacity: 1;
+}
+
+.carousel-item:hover .carousel-overlay {
+    opacity: 1; /* Muncul saat hover */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-item .overlay-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    height: auto;
+    z-index: 2;
+    
+}
+
+@media (max-width: 480px) {
+    /* Slide pertama */
+    .carousel-inner .carousel-item:nth-child(1) .overlay-image {
+        content: url('aset/webp/himasPort.webp'); /* Gambar overlay untuk slide pertama pada layar kecil */
+    }
+    /* Slide kedua */
+    .carousel-inner .carousel-item:nth-child(2) .overlay-image {
+        content: url('aset/webp/edenPort.webp'); /* Gambar overlay untuk slide kedua pada layar kecil */
+    }
+    /* Slide ketiga */
+    .carousel-inner .carousel-item:nth-child(3) .overlay-image {
+        content: url('aset/webp/stigdevPort.webp'); /* Gambar overlay untuk slide ketiga pada layar kecil */
+    }
+    /* Slide keempat */
+    .carousel-inner .carousel-item:nth-child(4) .overlay-image {
+        content: url('aset/webp/unifistPort.webp'); /* Gambar overlay untuk slide keempat pada layar kecil */
+    }
+    /* Slide kelima */
+    .carousel-inner .carousel-item:nth-child(5) .overlay-image {
+        content: url('aset/webp/futsalPort.webp'); /* Gambar overlay untuk slide kelima pada layar kecil */
+    }
+    /* Slide keenam */
+    .carousel-inner .carousel-item:nth-child(6) .overlay-image {
+        content: url('aset/webp/bultangPort.webp'); /* Gambar overlay untuk slide keenam pada layar kecil */
+    }
+    /* Slide ketujuh */
+    .carousel-inner .carousel-item:nth-child(7) .overlay-image {
+        content: url('aset/webp/mahatraderPort.webp'); /* Gambar overlay untuk slide ketujuh pada layar kecil */
+    }
+}
+
+.sistem-kom-img{
+    object-position: top;
+}
+
+.slider-wrapper{
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 40px 70px 55px;    
+}
+
+/* Agar semua slide punya tinggi yang fleksibel dan konsisten */
+.card-list.swiper-wrapper {
+    display: flex;
+}
+
+/* Untuk memastikan semua slide/card punya tinggi penuh */
+.swiper-slide {
+    display: flex;
+    height: auto !important;
+}
+
+/* Struktur card agar bisa mengatur tinggi yang rata */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Memaksa bagian tengah mengisi ruang yang fleksibel */
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Agar tombol selalu di bawah */
+.card button.btn {
+    margin-top: auto;
+}
+
+
+.card-text{
+    min-height: 50px;
+    max-height: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.swiper-pagination{
+    margin-top: 50px;
+}
+
+.swiper-slide-button {
+    transition: 0.2s ease;
+    color: #202020 !important;
+    opacity: 0.5;
+
+}
+
+.swiper-slide-button:hover{
+    color: #f6c916 !important;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup-content {
+    background: white;
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+.popup video {
+    width: 100%;
+    border-radius: 10px;
+}
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    background: rgba(128, 128, 128, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.popup .close:hover {
+    background: rgba(128, 128, 128, 0.8);
+}
+
+.card-container h1{
+    text-align: center;
+    padding-bottom: 10px;
+    text-decoration: underline;
+    text-decoration-thickness: 5px; /* Mengatur ketebalan underline */
+    text-decoration-color: #f6c916; /* Mengatur warna underline */
+    text-underline-offset: 10px; /* Mengatur jarak antara teks dan underline */
+}
+
+
+
+h1{
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.custom-heading{
+    font-weight: bold;
+    color: #202020;
+}
+
+p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.card .btn{
+    background-color: #1d61a1;
+    color: white;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.card .btn:hover{
+    background-color: #f6c916;
+}
+
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.25rem; /* tablet dan HP besar */
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-title {
+        font-size: 1.1rem; /* HP kecil */
+    }
+
+    .card-text {
+        font-size: 0.875rem;
+    }
+}
+
+#carouselExampleIndicators {
+    max-width: 100%;
+    margin: auto;
+}
+  
+.carousel-inner {
+    align-items: center;
+    height: 500px;
+}
+
+
+@media (max-width: 768px) {
+    .carousel-title {
+      font-size: 2rem;
+      margin-left: 75px;
+    }
+  
+    .carousel-caption p {
+      font-size: 1rem;
+    }
+}
+  
+@media (max-width: 480px) {
+    .carousel-title {
+      font-size: 1.5rem;
+      margin-left: 30px;
+    }
+  
+    .carousel-caption p {
+      font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-container {
+        padding: 0 100px;
+        gap: 80px;
+    }
+
+    .aboutUs .card {
+        max-width: 700px;
+    }
+
+    .carousel-item .overlay-image {
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 4em;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+}
+
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+  
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+  
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 10px;
+}
+  
+.footer-logo p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+  
+.footer-contact h4, .footer-links h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #f6c916;
+}
+  
+.footer-contact p, .footer-links ul {
+    font-size: 14px;
+}
+
+.footer-contact{
+    color: #ccc;
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-contact i {
+    color: #f6c916;
+    font-size: 1.1rem;
+}
+
+.footer-contact a {
+    color: #ccc; /* Atur warna sesuai keinginanmu */
+    text-decoration: none; /* Hilangkan garis bawah */
+    transition: color 0.3s;
+}
+
+.footer-contact a:hover {
+    color: #fff; /* Warna saat di-hover */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+  
+.footer-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+  
+.footer-links ul li a:hover {
+    color: #fff;
+}
+  
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 13px;
+    color: #aaa;
+}
+  
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .aboutUs .card{
+        margin: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        height: auto;
+
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .greet h1 {
+        font-size: 2rem;
+    }
+
+    .greet p {
+        font-size: 1rem;
+    }
+
+    .carousel-overlay h2 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar-brand img {
+        width: 100px;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .popup-content {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer{
+        height: 100%;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo img {
+        margin: 0 auto 10px;
+        margin-bottom: 10px;
+    }
+
+    .footer-contact {
+        text-align: center;
+    }
+
+    .footer-contact p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .footer-contact i,
+    .footer-contact img {
+        margin-bottom: 5px;
+    }
+
+    .footer-logo, 
+    .footer-contact, 
+    .footer-links {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 25px;
+    }
+
+    .footer-links ul {
+        padding-left: 0;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}
