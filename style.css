@@ -71,13 +71,14 @@ html {
 }
 
 .content {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    top: 20px;
     padding: 30px;
     background-color: #1d61a1;
     text-align: center;
-    height: 30vh;
 }
 
 .content .greet{
@@ -155,6 +156,8 @@ html {
     display: block;
     align-items: center;
     justify-content: center;
+    height: auto;
+    min-height: 100vh;
 }
 
 .orKom h1{
@@ -168,7 +171,12 @@ html {
 }
 
 .carousel-item{
-    bottom: 2vh;
+    display: flex !important;
+    height:80vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel-item .carousel-overlay {
@@ -180,7 +188,7 @@ html {
     background: rgba(0, 0, 0, 0.7); /* Warna hitam semi-transparan */
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     padding: 2rem;
     text-align: center;
     opacity: 0; /* Sembunyiin dulu */
@@ -204,12 +212,25 @@ html {
     opacity: 1; /* Muncul saat hover */
 }
 
+.carousel-item img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-item .overlay-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    height: auto;
+    z-index: 2;
+    
+}
+
 @media (max-width: 480px) {
-    .carousel-item .carousel-overlay .overlay-image{
-        bottom: 20vh;
-    }  
-
-
     /* Slide pertama */
     .carousel-inner .carousel-item:nth-child(1) .overlay-image {
         content: url('aset/webp/himasPort.webp'); /* Gambar overlay untuk slide pertama pada layar kecil */
@@ -431,20 +452,6 @@ p {
     height: 500px;
 }
 
-.carousel-item img {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
-    object-position: center;
-}
-
-.carousel-item .overlay-image {
-    position: absolute;
-    max-width: 100%;
-    width: 90%;
-    height: auto;
-    z-index: 2;
-}
 
 @media (max-width: 768px) {
     .carousel-title {
@@ -465,6 +472,29 @@ p {
   
     .carousel-caption p {
       font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-container {
+        padding: 0 100px;
+        gap: 80px;
+    }
+
+    .aboutUs .card {
+        max-width: 700px;
+    }
+
+    .carousel-item .overlay-image {
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 4em;
+    }
+
+    p {
+        font-size: 1.5em;
     }
 }
 
@@ -557,23 +587,6 @@ p {
     color: #aaa;
 }
   
-
-h1{
-    font-size: 3em;
-    margin-bottom: 0.5em;
-}
-
-.custom-heading{
-    font-weight: bold;
-    color: #202020;
-}
-
-p {
-    font-size: 1.2em;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 991px) {
     .navbar-nav {
